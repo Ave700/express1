@@ -6,7 +6,7 @@ block content
   form(method='POST' action='')
     div.form-group
       label(for='Task') Task:
-      input#task.form-control(type='text' placeholder='Books Task' name='task' required='true' value=(undefined===todo ? '' : todo.task) )
+      input#task.form-control(type='text' placeholder='Task' name='task' required='true' value=(undefined===todo ? '' : todo.task) )
       label(for='Rating') Rating:
       input#due_date.form-control(type='date' name='due_date' required='true' value=(undefined===todo ? '' : todo.due_date))
     button.btn.btn-primary(type='submit') Submit
