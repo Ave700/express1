@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1=task
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='Task') Task:
+      input#task.form-control(type='text' placeholder='Books Task' name='task' required='true' value=(undefined===todo ? '' : todo.task) )
+      label(for='Rating') Rating:
+      input#due_date.form-control(type='date' name='due_date' required='true' value=(undefined===todo ? '' : todo.due_date))
+    button.btn.btn-primary(type='submit') Submit
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

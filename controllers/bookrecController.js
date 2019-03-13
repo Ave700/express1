@@ -4,32 +4,6 @@ const { body,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
 
 
-// var async = require('async');
-
-// exports.index = function(req, res) {   
-//     res.render('index', { title: 'HomePage', error: err, data: results });
-//     // async.parallel({
-//     //     // book_count: function(callback) {
-//     //     //     Book.countDocuments({}, callback); // Pass an empty object as match condition to find all documents of this collection
-//     //     // },
-//     //     // book_recs_count: function(callback) {
-//     //     //     Bookrecs.countDocuments({}, callback);
-//     //     // },
-//     //     // book_recs_available_count: function(callback) {
-//     //     //     Bookrecs.countDocuments({status:'Available'}, callback);
-//     //     // },
-//     //     // author_count: function(callback) {
-//     //     //     Author.countDocuments({}, callback);
-//     //     // },
-//     //     // genre_count: function(callback) {
-//     //     //     Genre.countDocuments({}, callback);
-//     //     // }
-//     // }, 
-//     // function(err, results) {
-//     //     res.render('index', { title: 'HomePage', error: err, data: results });
-//     // });
-// };
-
 
 //Should display book reccomendations
 exports.bookrec_list = function(req,res,next) {

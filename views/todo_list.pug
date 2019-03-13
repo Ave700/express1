@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+    each todo in todo_list
+      li 
+        | #{todo.task} :
+        |  (#{todo.due_date})
+
+    else
+      li There are no task!.
