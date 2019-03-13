@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+    each bookrec in bookrec_list
+      li 
+        a(href=bookrec.url) #{bookrec.title} 
+        |  (#{bookrec.rating} - #{bookrec.summery})
+
+    else
+      li There are no reccomendations.
