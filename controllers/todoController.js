@@ -12,13 +12,13 @@ exports.todo_list = function(req,res,next) {
     .sort([['due_date', 'ascending']])
     .exec(function (err,list_todos) {
         if(err) {return next(err); }
-        res.render('todo_list', {task: 'Book Reccomendations', todo_list : list_todos});
+        res.render('todo_list', {task: 'Create To Do', todo_list : list_todos});
     });
 };
 
 // Display Author create form on GET.
 exports.todo_create_get = function(req, res, next) {       
-    res.render('todo_form', { task: 'Create Book Reccomendation'});
+    res.render('todo_form', { task: 'Create To Do task'});
 };
 
 
@@ -42,7 +42,7 @@ exports.todo_create_post = [
 
         if (!errors.isEmpty()) {
             // There are errors. Render form again with sanitized values/errors messages.
-            res.render('todo_form', { task: 'Create Reccomendation', todo: req.body, errors: errors.array() });
+            res.render('todo_form', { task: 'Create To Do', todo: req.body, errors: errors.array() });
             return;
         }
         else {
