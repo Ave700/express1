@@ -1,4 +1,4 @@
-var ToDo = require('../models/todo');
+var Todo = require('../models/todo');
 
 const { body,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
@@ -8,11 +8,11 @@ const { sanitizeBody } = require('express-validator/filter');
 //Should display book reccomendations
 exports.todo_list = function(req,res,next) {
 
-    ToDo.find()
+    Todo.find()
     .sort([['due_date', 'ascending']])
     .exec(function (err,list_todos) {
         if(err) {return next(err); }
-        res.render('todo_list', {task: 'Create To Do', todo_list : list_todos});
+        res.render('todo_list', {title: 'To Do List (this dynamically pulls data from server)', todo_list : list_todos});
     });
 };
 
@@ -53,8 +53,6 @@ exports.todo_create_post = [
                 {
                     task: req.body.task,
                     due_date: req.body.due_date,
-                    
-                    
                 });
             todo.save(function (err) {
                 if (err) { return next(err); }
@@ -64,3 +62,4 @@ exports.todo_create_post = [
         }
     }
 ]
+

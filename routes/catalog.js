@@ -5,10 +5,11 @@ var main_controller = require('../controllers/mainController');
 var book_rec_controller = require('../controllers/bookrecController');
 var to_do_controller = require('../controllers/todoController');
 
+
 // GET catalog home page.
 router.get('/', main_controller.index);
 
-///CALCULATOR ROUTE ///
+
 
 ///TO DO ROUTE ///
 router.get('/todo/create', to_do_controller.todo_create_get);

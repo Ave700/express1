@@ -7,7 +7,7 @@ block content
     each todo in todo_list
       li 
         | #{todo.task} :
-        |  (#{todo.due_date})
+        |  (#{todo.due_date_formatted})
 
     else
       li There are no task!.

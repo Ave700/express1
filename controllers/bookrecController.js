@@ -12,7 +12,7 @@ exports.bookrec_list = function(req,res,next) {
     .sort([['title', 'ascending']])
     .exec(function (err,list_bookrecs) {
         if(err) {return next(err); }
-        res.render('bookrec_list', {title: 'Book Reccomendations', bookrec_list : list_bookrecs});
+        res.render('bookrec_list', {title: 'Book Reccomendations (this dynamically pulls data from server)', bookrec_list : list_bookrecs});
     });
 };
 
